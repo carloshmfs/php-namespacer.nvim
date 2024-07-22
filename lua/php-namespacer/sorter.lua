@@ -38,7 +38,7 @@ function Sorter:sort()
         local node_type = node:type()
         local start_row, start_col, end_row, end_col = node:range()
 
-        print(string.format("Node: %s, Range: [%d, %d] - [%d, %d]", node_type, start_row, start_col, end_row, end_col))
+        print(string.format("Node: %s Line: %d Length: %d Content: %s", node_type, start_row + 1, end_col, vim.treesitter.get_node_text(node, buffer)))
     end
 end
 
